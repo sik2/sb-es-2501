@@ -1,8 +1,8 @@
-package com.ll.es.post.postDoc.service;
+package com.ll.es.domain.post.postDoc.service;
 
 import com.github.f4b6a3.tsid.TsidCreator;
-import com.ll.es.post.postDoc.document.PostDoc;
-import com.ll.es.post.postDoc.repository.PostDocRepository;
+import com.ll.es.domain.post.postDoc.document.PostDoc;
+import com.ll.es.domain.post.postDoc.repository.PostDocRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +17,9 @@ public class PostDocService {
                 .content(content)
                 .build();
         return postDocRepository.save(postDoc);
+    }
+
+    public void truncate() {
+        postDocRepository.deleteAll();
     }
 }

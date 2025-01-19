@@ -1,4 +1,4 @@
-package com.ll.es.post.postDoc.document;
+package com.ll.es.domain.post.postDoc.document;
 
 import lombok.Builder;
 import lombok.Getter;

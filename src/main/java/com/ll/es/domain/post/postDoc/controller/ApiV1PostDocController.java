@@ -1,7 +1,7 @@
-package com.ll.es.post.postDoc.controller;
+package com.ll.es.domain.post.postDoc.controller;
 
-import com.ll.es.post.postDoc.document.PostDoc;
-import com.ll.es.post.postDoc.service.PostDocService;
+import com.ll.es.domain.post.postDoc.document.PostDoc;
+import com.ll.es.domain.post.postDoc.service.PostDocService;
 import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
