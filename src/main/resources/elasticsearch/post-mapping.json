@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "id": {
+      "type": "keyword"
+    },
+    "title": {
+      "type": "text",
+      "analyzer": "korean",
+      "search_analyzer": "korean"
+    },
+    "content": {
+      "type": "text",
+      "analyzer": "korean",
+      "search_analyzer": "korean"
+    },
+    "createdDate": {
+      "type": "date"
+    },
+    "modifiedDate": {
+      "type": "date"
+    }
+  }
+}

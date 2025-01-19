@@ -15,6 +15,11 @@ services:
       - elasticsearch_data:/usr/share/elasticsearch/data
     networks:
       - elastic
+    command: >
+      bash -c '
+        bin/elasticsearch-plugin install analysis-nori || true
+        /usr/local/bin/docker-entrypoint.sh
+      '
 
   kibana:
     image: docker.elastic.co/kibana/kibana:8.3.3
@@ -30,9 +35,7 @@ services:
       - elastic
 
   logstash:
-    build:
-      context: ./logstash
-      dockerfile: Dockerfile
+    image: docker.elastic.co/logstash/logstash:8.3.3
     container_name: logstash
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
