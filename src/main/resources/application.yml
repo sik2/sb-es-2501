@@ -4,3 +4,27 @@ spring:
    docker:
     compose:
       file: ./infra/compose.yaml
+   datasource:
+     url: jdbc:mysql://localhost:3306/es_dev
+     username: root
+     password: 1234
+     driver-class-name: com.mysql.cj.jdbc.Driver
+   output:
+     ansi:
+       enabled: always
+   jpa:
+     hibernate:
+       ddl-auto: update
+     show-sql: true # ????? ?????
+     properties:
+       hibernate:
+         format_sql: true # SQL ???
+         highlight_sql: true # ANSI ??? ?? ????
+         use_sql_comments: true # SQL ??? /* */ ?? ??
+   logging:
+     level:
+       com.ll.es: DEBUG
+       org.hibernate.SQL: DEBUG # logger? ?????
+       org.hibernate.orm.jdbc.bind: TRACE
+       org.hibernate.orm.jdbc.extract: TRACE
+       org.springframework.transaction.interceptor: TRACE # ???? ? ??
